@@ -6,22 +6,27 @@ import java.util.ArrayList;
 
 
 public class Deporte implements Serializable {
-   private ArrayList <Deporte> deporte;
+   private ArrayList <Torneo> torneos = new ArrayList();
    private String nombre;
-   private String periodo;
-   
-   public Deporte(ArrayList<Deporte> deporte, String nombre, String periodo) {
-        this.deporte = deporte;
+
+    public Deporte() {
+        
+    }
+
+    public Deporte(String nombre) {
+        this.torneos = torneos;
         this.nombre = nombre;
-        this.periodo = periodo;
+    }
+    public void addTorneo(Torneo torneo){
+        this.torneos.add(torneo);
     }
 
-    public ArrayList<Deporte> getDeporte() {
-        return deporte;
+    public ArrayList<Torneo> getTorneos() {
+        return torneos;
     }
 
-    public void setDeporte(ArrayList<Deporte> deporte) {
-        this.deporte = deporte;
+    public void setTorneos(ArrayList<Torneo> torneos) {
+        this.torneos = torneos;
     }
 
     public String getNombre() {
@@ -32,18 +37,16 @@ public class Deporte implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
-    }
-
     @Override
     public String toString() {
         return nombre;
     }
+    
+    
+   
+   
+
+   
 
     
    

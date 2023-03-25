@@ -11,18 +11,45 @@ import java.util.ArrayList;
  *
  * @author joeds
  */
-public class Torneo implements Serializable{
-    private  String nombre;
-    private ArrayList<Equipo> equipos;
-    private ArrayList<Partido> partidos;
+public class Torneo implements Serializable {
 
-    public Torneo(String nombre, ArrayList<Equipo> equipos, ArrayList<Partido> partidos) {
-        this.nombre = nombre;
-        this.equipos = equipos;
-        this.partidos = partidos;
+    private String nombre;
+    private ArrayList<Equipo> equipos=new ArrayList();
+    private ArrayList<Partido> partidos=new ArrayList();
+    private String periodo;
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public Torneo(String nombre, String periodo) {
+        this.nombre = nombre;
+        this.periodo = periodo;
+    }
+
+    public void partidosagg(Partido par) {
+        this.partidos.add(par);
+        
+    } public void equiposagg(Equipo e){
+        this.equipos.add(e);
+    }
+
     public String getNombre() {
         return nombre;
+
+    }
+
+    public void agregarTeam(Equipo t) {
+        this.equipos.add(t);
+
+    }
+
+    public void agregarMatch(Partido p) {
+        this.partidos.add(p);
     }
 
     public void setNombre(String nombre) {
@@ -50,6 +77,4 @@ public class Torneo implements Serializable{
         return nombre;
     }
 
-    
-    
 }

@@ -5,6 +5,7 @@
 package examenii_p2_joedsosa;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,10 +14,26 @@ import java.io.Serializable;
 class Equipo implements Serializable{
     private String nombre;
     private int puntos;
+    private ArrayList<Partido>partido = new ArrayList();
+    
+   public void addPartido(Partido p ){
+        this.partido.add(p);
+    }
 
-    public Equipo(String nombre, int puntos) {
+    public ArrayList<Partido> getPartido() {
+        return partido;
+    }
+
+    public void setPartido(ArrayList<Partido> partido) {
+        this.partido = partido;
+    }
+    
+    public Equipo(String nombre) {
         this.nombre = nombre;
-        this.puntos = puntos;
+       
+    }
+     public void contpunt(int puntos){
+        this.puntos+=puntos;
     }
 
     public String getNombre() {
